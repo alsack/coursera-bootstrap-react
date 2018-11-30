@@ -15,5 +15,11 @@ router.use('/dist', express.static(jqueryDistDir));
 const bootstrapDistDir = path.resolve(__dirname, '../../../node_modules/bootstrap/dist');
 router.use('/dist', express.static(bootstrapDistDir));
 const popperDistDir = path.resolve(__dirname, '../../../node_modules/popper.js/dist');
+router.use('/dist', express.static(popperDistDir));
+
+//If nothing else handles the request, send a 404 not found
+router.use('/', (req, res) => {
+    res.send(404);
+})
 
 module.exports = router;
