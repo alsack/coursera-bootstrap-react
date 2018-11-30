@@ -1,25 +1,9 @@
-const path = require('path');
-const fs = require('fs');
+const router = require('./web/router.js');
 
-const createServer = require('./web/createServer.js');
-const router = require('./web/routes.js');
+//launch server
+const node_web_server = require('node_web_server/src/index.js');
 
-//load process.env variables from .env file
-require('dotenv').config();
-
-const port = process.env.PORT;
-let sslKeys = undefined;
-
-if(process.env.HTTPS === 'true') {
-   sslKeys = {
-    cert: fs.readFileSync(path.join(__dirname, 'certs/fullchain.pem')),
-    key: fs.readFileSync(path.join(__dirname, 'certs/privkey.pem'))
-  }
-}
-
-//create server.
-const {app, server} = createServer(port, sslKeys);
 //add routes
-router(app);
+node_web_server.app.use('/', router);
 
-module.exports = {app, server};
+module.exports = { node_web_server };
