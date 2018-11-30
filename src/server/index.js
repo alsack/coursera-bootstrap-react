@@ -8,7 +8,7 @@ const router = require('./web/routes.js');
 require('dotenv').config();
 
 const port = process.env.PORT;
-const sslKeys = undefined;
+let sslKeys = undefined;
 
 if(process.env.HTTPS === 'true') {
    sslKeys = {
