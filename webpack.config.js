@@ -31,6 +31,15 @@ bundles = bundles.map((b) => {
           use: ['style-loader', 'css-loader']
         }
       ]
+    },
+    devtool: 'inline-source-map',
+    devServer: {
+      watchContentBase: true,
+      contentBase: [
+        path.resolve(__dirname, 'src/client/public'),
+        path.resolve(__dirname, 'src/client/dist'),
+        path.resolve(__dirname, 'node_modules/bootstrap/dist/')
+      ]
     }
   });
 });

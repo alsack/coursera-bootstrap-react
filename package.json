@@ -4,9 +4,11 @@
   "description": "",
   "main": "public/index.html",
   "scripts": {
-    "start": "node ./src/server/index.js",
+    "start": "pm2 start ./src/server/index.js --name \"coursera_bootstrap\"",
+    "stop": "pm2 delete \"coursera_bootstrap\"",
     "lint": "./node_modules/eslint/bin/eslint.js .",
     "build": "npm run lint && node ./scripts/build.js",
+    "dev": "webpack-dev-server --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +27,7 @@
     "express": "^4.16.4",
     "jquery": "^3.3.1",
     "node_web_server": "git+https://github.com/alsack/node_web_server.git",
+    "pm2": "^3.2.2",
     "popper.js": "^1.14.5"
   },
   "devDependencies": {
@@ -34,6 +37,8 @@
     "eslint": "^5.9.0",
     "eslint-config-google": "^0.11.0",
     "style-loader": "^0.23.1",
-    "webpack": "^4.26.1"
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
   }
 }
