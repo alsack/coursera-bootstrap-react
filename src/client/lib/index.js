@@ -3,4 +3,4 @@
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'font-awesome/css/font-awesome.min.css';
 
-console.log('Test');
+console.log('Test number 2');
