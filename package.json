@@ -8,7 +8,6 @@
     "stop": "pm2 delete \"coursera_bootstrap\"",
     "lint": "./node_modules/eslint/bin/eslint.js .",
     "build": "npm run lint && node ./scripts/build.js",
-    "dev": "webpack-dev-server --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -10,10 +10,10 @@ let bundles = [{
   }
 }, {
   mode: 'development',
-  entry: path.resolve(__dirname, 'src/client/lib/aboutus/index.js'),
+  entry: path.resolve(__dirname, 'src/client/lib/util/globalLoader.js'),
   output: {
     path: path.resolve(__dirname, 'src/client/dist'),
-    filename: 'aboutus.js'
+    filename: 'globalLoader.js'
   }
 }];
 
@@ -41,15 +41,7 @@ bundles = bundles.map((b) => {
         }
       ]
     },
-    devtool: 'inline-source-map',
-    devServer: {
-      watchContentBase: true,
-      contentBase: [
-        path.resolve(__dirname, 'src/client/public'),
-        path.resolve(__dirname, 'src/client/dist'),
-        path.resolve(__dirname, 'node_modules/bootstrap/dist/')
-      ]
-    }
+    devtool: 'inline-source-map'
   });
 });
 
