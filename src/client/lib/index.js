@@ -1,6 +1,11 @@
-// import 'jquery/dist/jquery.slim.min.js';
+import $ from 'jquery';
 // import 'popper.js/dist/umd/popper.min.js';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'font-awesome/css/font-awesome.min.css';
 
-console.log('Test number 2');
+import addLoginModal from './loginModal';
+
+$(document).ready(function() {
+  $('[data-toggle="tooltip"]').tooltip();
+  addLoginModal();
+});
