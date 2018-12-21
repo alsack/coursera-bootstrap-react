@@ -8,7 +8,7 @@ import modalHtml from './reserveModal.html';
 export default function addReserveModal(container) {
   $(document.body).append(modalHtml);
 
-  container.append(`
-    <a role="button" class="btn btn-lg btn-block nav-link btn-warning"
+  $(container).append(`
+    <a role="button" class="btn btn-lg btn-block nav-link btn-warning flex-center"
     data-toggle="modal" data-target="#reserveModal">Reserve Table</a>`);
 };

@@ -3,13 +3,17 @@ import $ from 'jquery';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'font-awesome/css/font-awesome.min.css';
 
+import addCarousel from './carousel';
 import addLoginModal from './loginModal';
 import addReserveModal from './reserveModal';
 
 $(document).ready(function() {
-  const navLoginContainer = $('#loginContainer');
+  const carouselContainer = document.querySelector('#carouselContainer');
+  addCarousel(carouselContainer);
+
+  const navLoginContainer = document.querySelector('#loginContainer');
   addLoginModal(navLoginContainer);
 
-  const reserveTableContainer = $('#reserveButtonContainer');
+  const reserveTableContainer = document.querySelector('#reserveButtonContainer');
   addReserveModal(reserveTableContainer);
 });

@@ -8,7 +8,7 @@ import loginModal from './loginModal.html';
  */
 function addLoginModal(container) {
   $(document.body).append(loginModal);
-  container.append(`
+  $(container).append(`
     <span class="navbar-text">
         <a data-toggle="modal" data-target="#loginModal">
         <span class="fa fa-sign-in"></span> Login</a>
