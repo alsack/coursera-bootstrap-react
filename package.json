@@ -7,7 +7,7 @@
     "start": "pm2 start ./src/server/index.js --name \"coursera_bootstrap\"",
     "stop": "pm2 delete \"coursera_bootstrap\"",
     "lint": "./node_modules/eslint/bin/eslint.js .",
-    "build": "npm run lint && node ./scripts/build.js",
+    "build": "node ./scripts/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -35,9 +35,11 @@
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^1.0.0",
     "css-loader": "^1.0.1",
     "eslint": "^5.9.0",
     "eslint-config-google": "^0.11.0",
+    "eslint-loader": "^2.1.1",
     "file-loader": "^2.0.0",
     "html-loader": "^0.5.5",
     "style-loader": "^0.23.1",
