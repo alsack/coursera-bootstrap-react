@@ -9,12 +9,19 @@ import html from './carousel.html';
 export default function addCarousel(container) {
   $(container).append(html);
   const myCarousel = $(container).find('#mycarousel');
-
   myCarousel.carousel( {interval: 2000} );
-  myCarousel.find('#carousel-pause').click(function() {
-    myCarousel.carousel('pause');
-  });
-  myCarousel.find('#carousel-play').click(function() {
-    myCarousel.carousel('cycle');
+
+  const controlBtn = myCarousel.find('#carouselButton');
+  controlBtn.click(function() {
+    const span = controlBtn.find('span');
+    if (span.hasClass('fa-pause')) {
+      span.removeClass('fa-pause');
+      span.addClass('fa-play');
+      myCarousel.carousel('pause');
+    } else {
+      span.removeClass('fa-play');
+      span.addClass('fa-pause');
+      myCarousel.carousel('cycle');
+    }
   });
 }
