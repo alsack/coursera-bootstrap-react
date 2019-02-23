@@ -23,7 +23,7 @@
   "homepage": "https://github.com/alsack/coursera-bootstrap-react#readme",
   "dependencies": {
     "acorn": "^6.0.4",
-    "bootstrap": "^4.1.3",
+    "bootstrap": "^4.3.1",
     "bootstrap-social": "^5.1.1",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
